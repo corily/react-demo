@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.auto-ative {
+  color: #fff;
+  background-color: #137cbd;
+  padding: 2px 8px;
+  border-radius: 4px;
+}

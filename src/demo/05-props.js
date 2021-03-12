@@ -2,7 +2,7 @@ import React from 'react'
 // import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-// props:  只读
+// props:  只读   props.children 属性可接收组件标签体内容
 export default class PropsDemo extends React.Component {
 
   // 如果需要在构造器中用 this.props 访问props属性，就必须要接收props参数，并传递给super

@@ -16,6 +16,7 @@ import TodoList from './components/TodoList';
 import ProxyDemo from './demo/11-proxy';
 import PubSubDemo from './demo/12-消息订阅与发布机制/PubSub';
 import FetchDemo from './demo/13-fetch';
+import RouterDemo from './demo/14-react-router';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -58,6 +59,7 @@ ReactDOM.render(
     <ProxyDemo/>
     <PubSubDemo/>
     <FetchDemo/>
+    <RouterDemo>【slot content】</RouterDemo>
   </div>,
   document.getElementById('root')
 );
