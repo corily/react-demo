@@ -47,7 +47,7 @@ a2.speak.call({name: 'vovo', age: 16})
 
 
 // call 、bind 、 apply 这三个函数的第一个参数都是 this 的指向对象
-// call: call(this对象，arg1， arg2，ar g3...)       call  参数逐个加
+// call: call(this对象，arg1， arg2，arg3...)       call  参数逐个加
 // bind： 返回一个新函数，必须再调用，参数和 call 一样  bind(this对象, arg1, arg2)()
 
 // apply: apply(this对象，[arg1， arg2，arg3...])   apply 参数放在 [] 数组里
