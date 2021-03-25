@@ -1,7 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense, lazy } from 'react'
 import { NavLink, Link, BrowserRouter, HashRouter, Route, Switch, Redirect, withRouter } from 'react-router-dom';
-import Home from './Home'
-import Detail from './Detail'
+
+
+// 懒加载
+const Home = lazy(() => import('./Home'))
+const Detail = lazy(() => import('./Detail'))
+
+// 页面一开始时就加载
+// import Home from './Home'
+// import Detail from './Detail'
 
 /*
   一般组件 和 路由组件：
@@ -102,6 +109,20 @@ import Detail from './Detail'
 			4.备注：HashRouter可以用于解决一些路径错误相关的问题。(如：多级路由下，刷新页面后，在index.html 引入的 public目录下资源访问路径问题)
 
 */
+
+/*
+    路由懒加载： 使用 react 的 lazy 函数 和 Suspense 组件 结合使用
+        lazy(() => import('./Home.jsx'))
+        Suspense组件内部注册路由， fallback属性如果传入路由组件，则此路由组件不能使用懒加载
+            <Suspense fallback={<h3>Loading...</h3>}>
+              <Switch>
+                <Route path="/home" component={Home} />
+                <Route path="/detail" component={Detail} />
+                <Redirect to="/home" />
+              </Switch>
+            </Suspense>
+
+*/
 export default class RouterDemo extends Component {
   render() {
     console.log('router demo props: ', this.props)
@@ -120,13 +141,16 @@ export default class RouterDemo extends Component {
 
           </div>
           <div>
-            {/* 注册路由 */}
-            <Switch>
-              {/* <Route exact path="/home" component={Home} /> */}
-              <Route path="/home" component={Home} />
-              <Route path="/detail" component={Detail} />
-              <Redirect to="/home" />
-            </Switch>
+            {/* 懒加载路由 Suspense */}
+            <Suspense fallback={<h3>Loading...</h3>}>
+              {/* 注册路由 */}
+              <Switch>
+                {/* <Route exact path="/home" component={Home} /> */}
+                <Route path="/home" component={Home} />
+                <Route path="/detail" component={Detail} />
+                <Redirect to="/home" />
+              </Switch>
+            </Suspense>
           </div>
         </BrowserRouter>
         {/* </HashRouter> */}

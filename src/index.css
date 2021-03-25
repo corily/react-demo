@@ -18,3 +18,20 @@ code {
   padding: 2px 8px;
   border-radius: 4px;
 }
+
+.parent, .child, .grandson {
+  padding: 10px;
+  box-sizing: border-box;
+}
+.parent {
+  width: 960px;
+  background-color: antiquewhite;
+}
+.child {
+  width: 100%;
+  background-color: aquamarine;
+}
+.grandson {
+  width: 100%;
+  background-color: #ccc;
+}

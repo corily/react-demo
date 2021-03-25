@@ -17,6 +17,9 @@ import ProxyDemo from './demo/11-proxy';
 import PubSubDemo from './demo/12-消息订阅与发布机制/PubSub';
 import FetchDemo from './demo/13-fetch';
 import RouterDemo from './demo/14-react-router';
+import ReduxDemo from './demo/15-redux状态管理';
+import ReactReduxDemo from './demo/16-react-redux'
+import ExtansionDemo from './demo/17-extansion'
 
 import * as serviceWorker from './serviceWorker';
 
@@ -42,24 +45,35 @@ ReactDOM.render(
   // </React.StrictMode>,
   <div>
     {/* <App /> */}
-    <JsxDemo />
-    <ClassDemo />
-    <MyClassComponent />
-    <MyFuncComponent name='yoyo'/>
-    <StateDemo />
+    <JsxDemo /><br/>
+    <ClassDemo /><br/>
+    <MyClassComponent /><br/>
+    <MyFuncComponent name='yoyo'/><br/>
+    <StateDemo /><br/>
     {/* <PropsDemo name='tom' age={18} data={data}/> */}
-    <PropsDemo {...personInfo} data={data}/>
+    <PropsDemo {...personInfo} data={data}/><br/>
     <RefsDemo />
     <br/>
-    <HighFuncDemo />
-    <LifeDemo/>
-    <DiffDemo/>
+    <HighFuncDemo /><br/>
+    <LifeDemo/><br/>
+    <DiffDemo/><br/>
     <StyleModuleDemo/>
+    <br/>
     <TodoList/>
+    <br/>
     <ProxyDemo/>
+    <br/>
     <PubSubDemo/>
+    <br/>
     <FetchDemo/>
+    <br/>
     <RouterDemo>【slot content】</RouterDemo>
+    <br/>
+    <ReduxDemo/>
+    <br/>
+    <ReactReduxDemo/>
+    <br/>
+    <ExtansionDemo/>
   </div>,
   document.getElementById('root')
 );

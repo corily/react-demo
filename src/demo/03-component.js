@@ -14,13 +14,30 @@ import PropTypes from 'prop-types'
 
 
 /*
-this 在严格模式（use strict）下的指向
-1、 全局作用下 this  -> window
-2、 函数里的 this ->  undefined
-3、 对象的函数（方法）的 this  -> 调用函数的对象实例
+  this 在严格模式（use strict）下的指向
+  1、 全局作用下 this  -> window
+  2、 函数里的 this ->  undefined
+  3、 对象的函数（方法）的 this  -> 调用函数的对象实例
+
+  注：class 类中的方法默认开启局部的严格模式 'use strict'
 */
 
-// class 类中的方法默认开启局部的严格模式 'use strict'
+/*
+    组件优化：
+      Component组件的2个问题：（效率低）
+          1、 只要执行了 setState() ，即使不改变状态数据，组件也会重新render
+          2、 只要当前组件重新render，就会自动重新render子组件，即使子组件没有使用到父组件的任务数据
+
+      原因： Component中的 shouldComponentUpdate 钩子总是返回 true
+      
+      效率高做法：
+          只有当组件的 state 或 props 数据发生改变时才重新render
+
+      解决方法：2种
+          1、 重写 shouldComponentUpdate 钩子， 判断是否需要更新render
+          2、 使用 PureComponent 组件代替 Component 组件
+
+*/
 
 export class MyClassComponent extends React.Component {
   constructor (props) {
